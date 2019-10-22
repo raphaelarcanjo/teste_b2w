@@ -1,7 +1,7 @@
-const MongoClient = require('mongodb').MongoClient;
-const ObjectID = require('mongodb').ObjectID;
-const dbname = 'sw_infos';
-const dburl = 'mongodb://localhost:27017';
+const MongoClient = require('mongodb').MongoClient
+const ObjectID = require('mongodb').ObjectID
+const dbname = 'sw_infos'
+const dburl = 'mongodb://localhost:27017'
 
 const mongoOptions = {
     useUnifiedTopology: true,
@@ -13,24 +13,20 @@ const state = {
 }
 
 const connect = cb => {
-    if(state.db) cb();
+    if(state.db) cb()
     else{
         MongoClient.connect(dburl,mongoOptions,(err,client)=>{
-        if(err) cb(err);
+        if(err) cb(err)
         else{
-            state.db = client.db(dbname);
-            cb();
+            state.db = client.db(dbname)
+            cb()
             }
         })
     }
 }
 
-const getPrimaryKey = (_id)=>{
-    return ObjectID(_id);
-}
+const getPrimaryKey = (_id)=> ObjectID(_id)
 
-const getDB = ()=>{
-    return state.db;
-}
+const getDB = ()=> state.db
 
-module.exports = {getDB,connect,getPrimaryKey};
+module.exports = {getDB,connect,getPrimaryKey}
