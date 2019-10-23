@@ -1,0 +1,31 @@
+@font-face {
+  font-family: Starwars;
+  src: url('../font/Starjout.ttf');
+}
+body {
+  font-family: Starwars, sans-serif;
+  background: rgb(56,0,0);
+  background: linear-gradient(0deg, rgba(56,0,0,1) 0%, black 50%, rgb(109, 0, 0) 100%);
+  min-height: 100vh;
+}
+#app {
+  width: 85vw;
+  border-radius: 20px;
+  box-shadow: 0 15px 15px black;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/background.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+#app #content{
+  display: block;
+}
+#app #load {
+  display: none;
+}
+#app.loading #content{
+  display: none;
+}
+#app.loading #load {
+  display: block;
+}
